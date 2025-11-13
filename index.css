@@ -1,0 +1,36 @@
+body {
+    font-family: Bahnschrift, Roboto;
+    text-align: center;
+    padding: 40px;
+    margin: -30px;
+    background: #f7f7f2;
+}
+
+.stat { 
+    font-size: 24px;
+    margin: 20px 0;
+    color: #442a6e;
+}
+
+h1 {
+    color: #442a6e;
+    text-align: center;
+}
+
+button {
+    background-color: #442a6e;
+    color: #f7f7f2;
+    width: 160px;
+    height: 30px;
+    border-radius: 75px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.7s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #f5efe1;
+    color: #442a6e;
+    transform: scale(1.1);
+}

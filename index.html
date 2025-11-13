@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/png" href="centerpiece-main.png">
+    <title>LC Catalogue Stats</title>
+    <link rel = "stylesheet" type = "text/css" href = "index.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>📊 LC Catalogue Stats</h1>
+  <div class="stat">Total Visits: <span id="crochet-visits">0</span></div>
+
+  <div class="stat">Keychains: <span id="keychains-visits">0</span></div>
+  <div class="stat">Scrunchies: <span id="scrunchies-visits">0</span></div>
+  <div class="stat">Earrings: <span id="earrings-visits">0</span></div>
+  <div class="stat">Centerpieces: <span id="centerpieces-visits">0</span></div>
+  <div class="stat">Doilies: <span id="doilies-visits">0</span></div>
+  <div class="stat">Mini Bags: <span id="mini-visits">0</span></div>
+  <div class="stat">Coaster Sets: <span id="coaster-visits">0</span></div>
+  <div class="stat">Handkerchiefs: <span id="handkerchiefs-visits">0</span></div>
+  <div class="stat">Phone Pouches: <span id="phone-visits">0</span></div>
+
+  <button id="reset-crochet-stats">Reset Statistics</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js";
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyAvWlnAUx3hFEkksLzvTTnUWsn90OVPqFI",
+    authDomain: "lph-server-website.firebaseapp.com",
+    databaseURL: "https://lph-server-website-default-rtdb.firebaseio.com",
+    projectId: "lph-server-website",
+    storageBucket: "lph-server-website.firebasestorage.app",
+    messagingSenderId: "200401032111",
+    appId: "1:200401032111:web:d0ccd06a0415e97657955a",
+    measurementId: "G-9B9SR4TZVY"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+// 🔁 Real-time sync
+  onValue(ref(db, "crochet_stats"), (snapshot) => {
+    const data = snapshot.val();
+    document.getElementById("crochet-visits").innerText = data.crochet_visits || 0;
+
+    document.getElementById("keychains-visits").innerText = data.keychains_visits || 0;
+    document.getElementById("scrunchies-visits").innerText = data.scrunchies_visits || 0;
+    document.getElementById("earrings-visits").innerText = data.earrings_visits || 0;
+    document.getElementById("centerpieces-visits").innerText = data.centerpieces_visits || 0;
+    document.getElementById("doilies-visits").innerText = data.doilies_visits || 0;
+    document.getElementById("mini-visits").innerText = data.mini_visits || 0;
+    document.getElementById("coaster-visits").innerText = data.coaster_visits || 0;
+    document.getElementById("handkerchiefs-visits").innerText = data.handkerchiefs_visits || 0;
+    document.getElementById("phone-visits").innerText = data.phone_visits || 0;
+
+  });
+
+  // 🧹 Reset button logic
+  document.getElementById("reset-crochet-stats").addEventListener("click", () => {
+    set(ref(db, "crochet_stats"), {
+      crochet_visits: 0,
+
+      keychains_visits: 0,
+      scrunchies_visits: 0,
+      earrings_visits: 0,
+      centerpieces_visits: 0,
+      doilies_visits: 0,
+      mini_visits: 0,
+      coaster_visits: 0,
+      handkerchiefs: 0,
+      phone_visits: 0
+      
+    });
+});
+
+  </script>
+
+
+</body>
+</html>
