@@ -13,6 +13,7 @@
   <h1>📊 LC Catalogue Stats</h1>
   <div class="stat">Total Visits: <span id="crochet-visits">0</span></div>
 
+  <div class="stat">Tie Backs: <span id="tie-visits">0</span></div>
   <div class="stat">Keychains: <span id="keychains-visits">0</span></div>
   <div class="stat">Scrunchies: <span id="scrunchies-visits">0</span></div>
   <div class="stat">Earrings: <span id="earrings-visits">0</span></div>
@@ -49,6 +50,7 @@
     const data = snapshot.val();
     document.getElementById("crochet-visits").innerText = data.crochet_visits || 0;
 
+    document.getElementById("tie-visits").innerText = data.tie_visits || 0;
     document.getElementById("keychains-visits").innerText = data.keychains_visits || 0;
     document.getElementById("scrunchies-visits").innerText = data.scrunchies_visits || 0;
     document.getElementById("earrings-visits").innerText = data.earrings_visits || 0;
@@ -67,6 +69,7 @@
     set(ref(db, "crochet_stats"), {
       crochet_visits: 0,
 
+      tie_visits: 0,
       keychains_visits: 0,
       scrunchies_visits: 0,
       earrings_visits: 0,
