@@ -1,36 +1,39 @@
 body {
-    font-family: Bahnschrift, Roboto;
-    text-align: center;
-    padding: 40px;
-    margin: -30px;
-    background: #f7f7f2;
+  font-family: Bahnschrift, Roboto, sans-serif;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  background: #f7f7f2;
+  overflow-x: hidden;
 }
 
 .stat { 
-    font-size: 24px;
-    margin: 20px 0;
-    color: #442a6e;
+  font-size: 24px;
+  margin: 20px auto;
+  color: #442a6e;
+  max-width: 600px;
 }
 
 h1 {
-    color: #442a6e;
-    text-align: center;
+  color: #442a6e;
+  margin-bottom: 30px;
 }
 
 button {
-    background-color: #442a6e;
-    color: #f7f7f2;
-    width: 160px;
-    height: 30px;
-    border-radius: 75px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: transform 0.7s ease;
+  background-color: #442a6e;
+  color: #f7f7f2;
+  width: 160px;
+  height: 35px;
+  border-radius: 75px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: none;
+  margin-top: 20px;
 }
 
 button:hover {
-    cursor: pointer;
-    background-color: #f5efe1;
-    color: #442a6e;
-    transform: scale(1.1);
+  background-color: #f5efe1;
+  color: #442a6e;
+  transform: scale(1.1);
 }
