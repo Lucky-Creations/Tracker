@@ -11,7 +11,7 @@
 
 <body>
   <h1>📊 LC Catalogue Stats</h1>
-  <div class="stat">Total Visits: <span id="crochet-visits">0</span></div>
+  <div class="stat">Total Visits: <span id="home-visits">0</span></div>
 
   <div class="stat">Tricolour: <span id="tricolour-visits">0</span></div>
   <div class="stat">Rakhis: <span id="rakhis-visits">0</span></div>
@@ -34,14 +34,14 @@
     import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js";
 
     const firebaseConfig = {
-    apiKey: "AIzaSyAvWlnAUx3hFEkksLzvTTnUWsn90OVPqFI",
-    authDomain: "lph-server-website.firebaseapp.com",
-    databaseURL: "https://lph-server-website-default-rtdb.firebaseio.com",
-    projectId: "lph-server-website",
-    storageBucket: "lph-server-website.firebasestorage.app",
-    messagingSenderId: "200401032111",
-    appId: "1:200401032111:web:d0ccd06a0415e97657955a",
-    measurementId: "G-9B9SR4TZVY"
+      apiKey: "AIzaSyCrMLfSNOiKR8IrU0d6CkUrMofj4WKoI_c",
+      authDomain: "lucky-creations-crochet.firebaseapp.com",
+      databaseURL: "https://lucky-creations-crochet-default-rtdb.firebaseio.com/",
+      projectId: "lucky-creations-crochet",
+      storageBucket: "lucky-creations-crochet.firebasestorage.app",
+      messagingSenderId: "527493766952",
+      appId: "1:527493766952:web:5dac9fff5448633075ba1d",
+      measurementId: "G-YLZF9540JL"
     };
 
     const app = initializeApp(firebaseConfig);
@@ -50,7 +50,7 @@
     //Real-time sync
     onValue(ref(db, "crochet_stats"), (snapshot) => {
       const data = snapshot.val();
-      document.getElementById("crochet-visits").innerText = data.crochet_visits || 0;
+      document.getElementById("home-visits").innerText = data.home_visits || 0;
 
       document.getElementById("tricolour-visits").innerText = data.tricolour_visits || 0;
       document.getElementById("rakhis-visits").innerText = data.rakhis_visits || 0;
@@ -71,7 +71,7 @@
     //Reset button logic
     document.getElementById("reset-crochet-stats").addEventListener("click", () => {
       set(ref(db, "crochet_stats"), {
-        crochet_visits: 0,
+        home_visits: 0,
 
         tricolour_visits: 0,
         rakhis_visits: 0,
