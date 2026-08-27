@@ -22,7 +22,7 @@ onValue(ref(db, "crochet_stats"), (snapshot) => {
   document.getElementById("home-visits").innerText = data.home_visits || 0;
 
   document.getElementById("tricolour-visits").innerText = data.tricolour_visits || 0;
-  document.getElementById("rakhis-visits").innerText = data.rakhis_visits || 0;
+  // document.getElementById("rakhis-visits").innerText = data.rakhis_visits || 0;
   document.getElementById("keychains-visits").innerText = data.keychains_visits || 0;
   document.getElementById("scrunchies-visits").innerText = data.scrunchies_visits || 0;
   document.getElementById("earrings-visits").innerText = data.earrings_visits || 0;
@@ -42,7 +42,7 @@ document.getElementById("reset-crochet-stats").addEventListener("click", () => {
     home_visits: 0,
 
     tricolour_visits: 0,
-    rakhis_visits: 0,
+    // rakhis_visits: 0,
     keychains_visits: 0,
     scrunchies_visits: 0,
     earrings_visits: 0,
@@ -71,7 +71,7 @@ function attachCounter(id, path) {
 attachCounter("home-visits", "home_visits");
 
 attachCounter("tricolour-visits", "tricolour_visits");
-attachCounter("rakhis-visits", "rakhis_visits");
+// attachCounter("rakhis-visits", "rakhis_visits");
 attachCounter("keychains-visits", "keychains_visits");
 attachCounter("scrunchies-visits", "scrunchies_visits");
 attachCounter("earrings-visits", "earrings_visits");
