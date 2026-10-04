@@ -21,6 +21,7 @@ onValue(ref(db, "crochet_stats"), (snapshot) => {
   const data = snapshot.val();
   document.getElementById("home-visits").innerText = data.home_visits || 0;
 
+  document.getElementById("combos-visits").innerText = data.combos_visits || 0;
   document.getElementById("garlands-visits").innerText = data.garlands_visits || 0;
   document.getElementById("tricolour-visits").innerText = data.tricolour_visits || 0;
   // document.getElementById("rakhis-visits").innerText = data.rakhis_visits || 0;
@@ -42,6 +43,7 @@ document.getElementById("reset-crochet-stats").addEventListener("click", () => {
   set(ref(db, "crochet_stats"), {
     home_visits: 0,
 
+    combos_visits: 0,
     garlands_visits: 0,
     tricolour_visits: 0,
     // rakhis_visits: 0,
@@ -72,6 +74,7 @@ function attachCounter(id, path) {
 // Calling the function for each category
 attachCounter("home-visits", "home_visits");
 
+attachCounter("combos-visits", "combos_visits");
 attachCounter("garlands-visits", "garlands_visits");
 attachCounter("tricolour-visits", "tricolour_visits");
 // attachCounter("rakhis-visits", "rakhis_visits");
